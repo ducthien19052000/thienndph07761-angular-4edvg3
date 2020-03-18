@@ -1,0 +1,45 @@
+<div class="row">
+	<h2>Danh sách Product Manager</h2>
+	<table border="1" class="table table-striped">
+		<tr>
+			<td>ID</td>
+			<td>Product Name</td>
+			<td>Pricce</td>
+			<td>Desc</td>
+			<td>Action</td>
+		</tr>
+
+		<tr *ngFor="let product of products" border="1">
+			<td>{{product.id}}</td>
+			<td>{{product.name}}</td>
+			<td>{{product.price}}</td>
+			<td>{{product.desc}}</td>
+
+			<td><button (click)="DMdelete(product.id)">Xóa</button></td>
+		</tr>
+	</table>
+
+	<div class="carousel-inner" role="listbox" style="margin-bottom: 50px; margin-top: 30px;">
+		<div class="carousel-item active">
+			<img class="d-block img-fluid" src="https://dummyimage.com/900x350" alt="First slide">
+            </div>
+		</div>
+
+
+		<div class="col-lg-4 col-md-6 mb-4" *ngFor="let product of products">
+			<div class="card h-100">
+				<a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+					<div class="card-body">
+						<h4 class="card-title">
+							<a href="#">{{product.name}}</a>
+						</h4>
+						<h5>$24.99</h5>
+						<p class="card-text">{{product.desc}}</p>
+
+					</div>
+
+			</div>
+
+
+		</div>
+	</div>
